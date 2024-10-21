@@ -11,6 +11,9 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 def verify_password(plain_password, hashed_password):
     return True #hash function needs to be added here
 
+def confirm_password(plain_password):
+    return True #password can be converted to hash here
+
 def create_access_token(data: dict):
     to_encode = data.copy()
     expire = datetime.utcnow() + timedelta(minutes=30)
